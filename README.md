@@ -36,3 +36,8 @@ Future State = Current State + (Production Rate - Consumption Rate) × Time Step
 Ammonia Toxicity: If NH3 levels exceed 80 units, the environment becomes toxic, causing daily fish fatalities.
 
 Mechanical Stress: If the filter power is set to "High" for more than 5 consecutive days, the resulting stress leads to fish death every 2 days.
+
+
+# Ecosystem Simulation Project
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Q_JtmlwyK4qgSNat7VZOovm6bJOqZEwa?usp=sharing)
