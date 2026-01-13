@@ -1,4 +1,4 @@
-# AquariumFinal
+# AquariumFinal 31Cekiyorum
 
 1. Project Overview
 This project is a computational simulation designed to predict biological and chemical changes in a closed aquarium ecosystem over a 30-day period. It translates real-world biological phenomena, such as the nitrogen cycle and photosynthesis, into a mathematical model to visualize system behavior over time.
