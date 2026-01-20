@@ -1,42 +1,49 @@
 # AquariumFinal
 
-1. Project Overview
-This project is a computational simulation designed to predict biological and chemical changes in a closed aquarium ecosystem over a 30-day period. It translates real-world biological phenomena, such as the nitrogen cycle and photosynthesis, into a mathematical model to visualize system behavior over time.
+AquariumFinal
+Project Overview
 
+This project is a computational simulation designed to predict biological and chemical changes in a closed aquarium ecosystem over a 30-day period. Real-world biological processes, such as photosynthesis and waste accumulation, are represented in a simplified mathematical framework to visualize how the system evolves over time.
 
-2. Mathematical Model
-The system is modeled using equations that describe the rate of change for Oxygen (O2), Carbon Dioxide (CO2), and Ammonia (NH3).
+Mathematical Model
 
-Biological Components:
+The aquarium system is described using equations that track the rate of change of key chemical variables, including Oxygen (O₂), Carbon Dioxide (CO₂), and Ammonia (NH₃). These variables are updated at discrete time intervals to represent daily changes within the ecosystem.
 
-Algae (Producers): The rate of O2 production and CO2 consumption is scaled by a light efficiency coefficient (Epsilon).
-O2 Production = Algae Count × 0.6 × Epsilon
-CO2 Consumption = Algae Count × 0.4 × Epsilon
+Biological Components
 
-Fish (Consumers): Fish consume O2 and produce NH3 and CO2 as metabolic byproducts.
-O2 Consumption = Fish Count × 0.5
-NH3 Production = Fish Count × 0.25
+Algae (Producers):
+Algae act as oxygen producers through photosynthesis and consume carbon dioxide in the process. The efficiency of oxygen production depends on light conditions and the amount of algae present in the system.
 
-Light Efficiency Coefficients (Epsilon): Coefficients are assigned based on the chlorophyll absorption spectrum to represent photosynthetic efficiency:
+Fish (Consumers):
+Fish consume oxygen for respiration and release ammonia and carbon dioxide as metabolic waste. As the fish population increases, oxygen consumption and waste production increase accordingly.
 
-Purple Light: Epsilon = 2.5 (Maximum absorption peak).
+Light Efficiency
 
-White Light: Epsilon = 1.0 (Balanced spectrum).
+Photosynthetic efficiency is controlled by a light efficiency coefficient, which represents how well different light types support photosynthesis:
 
-Green Light: Epsilon = 0.1 (Minimum efficiency due to reflection).
+Purple Light: High efficiency due to strong absorption by chlorophyll
 
-3. Numerical Method: The Euler Approach
-To solve these equations dynamically, we implemented a Discrete-Time Update Method (Euler’s Method). The state of the system at each daily step (t + 1) is calculated based on its state at time t.
+White Light: Moderate efficiency with a balanced spectrum
 
-The General Update Formula:
-Future State = Current State + (Production Rate - Consumption Rate) × Time Step
+Green Light: Low efficiency because most green light is reflected rather than absorbed
 
-4. System Constraints & Survival Logic
+This coefficient directly influences the rate of oxygen production by algae.
 
-Ammonia Toxicity: If NH3 levels exceed 80 units, the environment becomes toxic, causing daily fish fatalities.
+Numerical Method – Euler Approach
 
-Mechanical Stress: If the filter power is set to "High" for more than 5 consecutive days, the resulting stress leads to fish death every 2 days.
+The system is solved using a discrete-time numerical method based on Euler’s Method. At each time step, the future state of the system is calculated using the current state and the net effect of biological production and consumption processes.
 
+This approach allows the system to evolve dynamically while keeping the numerical implementation simple and transparent.
+
+System Constraints and Survival Logic
+
+Ammonia Toxicity:
+When ammonia levels become too high, the environment turns toxic and fish mortality increases.
+
+Mechanical Stress:
+Prolonged operation of the filtration system at high power creates mechanical stress, which negatively affects fish survival.
+
+These constraints ensure that the simulation reflects realistic ecological limits.
 
 # Ecosystem Simulation Project
 
